@@ -760,6 +760,8 @@ header {
   padding-left: 16px;
 
   background-color: var(--footer-bgc-color);
+
+  color: var(--button-text-primary-color);
 }
 
 .subscription-flex-box input::placeholder {
@@ -814,14 +816,6 @@ header {
   margin-left: 10px;
   width: 24px;
   height: 24px;
-
-  border: 1px solid red;
-
-  fill: red;
-  color: red;
-  background-color: teal;
-  object-fit: contain;
-  object-position: center;
 }
 
 /* Modal Windows  */
@@ -880,14 +874,19 @@ header {
   border-radius: 50%;
   cursor: pointer;
   background-color: var(--main-bgc-color);
-}
 
-/* Если у СВГ убрать width="18" height="18" то не центрируеться - попробовать трансформ транслейт -50% */
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .modal-button:hover,
 .modal-button:focus {
   color: var(--client-icon-akcent-color);
   fill: var(--client-icon-akcent-color);
+}
+
+.close-modal-logo {
+  width: 30px;
+  height: 30px;
 }
 
 .modal-form {
@@ -907,25 +906,48 @@ header {
   color: var(--button-secondary-text-color);
 }
 
-.modal-name {
+.modal-form-box {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
-  margin-bottom: 28px;
+
+  font-size: 12px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
 }
 
-.modal-phone {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 28px;
+.modal-input {
+  box-sizing: border-box;
+  height: 40px;
+  border-radius: 4px;
+  padding-left: 40px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-mail {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 28px;
+.modal-input:focus {
+  border-color: #2196f3;
+}
+
+.modal-input:focus + .modal-icon {
+  fill: #2196f3;
+}
+
+.modal-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 12px;
+  bottom: 21px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-comment {
@@ -933,10 +955,71 @@ header {
   flex-direction: column;
   width: 100%;
   margin-bottom: 20px;
+
+  font-size: 12px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+}
+
+.comment-textarea {
+  height: 120px;
+  padding: 12px 16px;
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.comment-textarea::placeholder {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .checkbox-policy {
   margin-bottom: 30px;
+
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-text-color);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-box {
+  position: absolute;
+  appearance: none;
+  opacity: 0;
+}
+
+.checkbox-icon {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.checkbox-box:checked + .checkbox-icon {
+  background-size: contain;
+  background-image: url(./images/checkbox-icon-on.svg);
+  background-color: #2196f3;
+  background-origin: border-box;
+  border-color: #2196f3;
+}
+
+.checkbox-policy a {
+  text-decoration-line: underline;
+
+  color: #2196f3;
 }
 
 .modal-send-button {
@@ -964,6 +1047,7 @@ header {
 .modal-send-button:focus {
   background-color: #188ce8;
   color: var(--button-text-primary-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .modal textarea {

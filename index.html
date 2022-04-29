@@ -60,6 +60,7 @@
         </section>              
         
             <section class="section">
+                
                 <div class="container">
                     <h2 class="topic features-main-title"> Наши преимущества</h2>
                     <ul class="features-flex-box list">
@@ -441,7 +442,7 @@
                         <input type="email" name="user-email" id="email" placeholder="E-mail">
                         <button class="button subscription-email-button" type="submit">Подписаться
                             <svg class="subscription-link-icon">
-                                <use href="./images/subscription-button-icon.svg"></use>
+                                <use href="./images/sprite.svg#icon-isend"></use>
                             </svg>
                         </button>
                     </div>
@@ -454,36 +455,50 @@
     <div data-modal class="backdrop is-hidden">
         <div class="modal">
             <button data-modal-close type="button" class="modal-button">
-                    <img alt="cross" width="30" height="30" class="close-modal-logo" src="./images/modal-close.svg">
+                    <svg class="close-modal-logo">
+                        <use href="./images/sprite.svg#icon-close"></use>
+                    </svg>
             </button>
 
             <form class="modal-form">
                 <h3 class="modal-title">Оставьте свои данные, мы вам перезвоним</h3>
                
-                <div class="modal-name">
+                <div class="modal-form-box">
                     <label for="name">Имя</label>
-                    <input type="text" name="name" id="name">
+                    <input class="modal-input" type="text" name="name" id="name" autocomplete="none">
+                    <svg class="modal-icon">
+                        <use href="./images/sprite.svg#icon-person"></use>
+                    </svg>
                 </div>
                 
-                <div class="modal-phone">
+                <div class="modal-form-box">
                     <label for="phone">Телефон</label>
-                    <input type="tel" name="phone" id="phone">
+                    <input class="modal-input" type="tel" name="phone" id="phone">
+                    <svg class="modal-icon">
+                        <use href="./images/sprite.svg#icon-phone"></use>
+                    </svg>
                 </div>
                             
-                <div class="modal-mail">
+                <div class="modal-form-box">
                     <label for="e-mail">Почта</label>
-                    <input type="email" name="e-mail" id="e-mail">
+                    <input class="modal-input" type="email" name="e-mail" id="e-mail">
+                    <svg class="modal-icon">
+                        <use href="./images/sprite.svg#icon-mail"></use>
+                    </svg>
                 </div>
 
                 <div class="modal-comment">
                     <label for="comment">Комментарий</label>
-                    <textarea name="comment" id="comment" placeholder="Введите текст">
-                                    </textarea>
+                    <textarea class="comment-textarea" name="comment" id="comment" placeholder="Введите текст"></textarea>
                 </div>
 
                 <div class="checkbox-policy">
-                    <input type="checkbox" name="" value="policy" id="policy">
-                    <label for="policy">Соглашаюсь с рассылкой и принимаю <a href="#">Условия договора</a></label>
+                    
+                    <label class="checkbox-label">
+                        <input class="checkbox-box" type="checkbox" name="" value="policy">
+                        <span class="checkbox-icon"></span>
+                        Соглашаюсь с рассылкой и принимаю&nbsp
+                        <a href="#">Условия договора</a></label>
                 </div>
                 
                 
